@@ -16,6 +16,6 @@ def add_log():
     r = redis.Redis(host='localhost', port=6379, db=0)
     r.lpush("history",json.dumps({"hello":"dungnt94"}))
 
-add_log()
-time.sleep(4)
+#add_log()
+#time.sleep(4)
 querry()

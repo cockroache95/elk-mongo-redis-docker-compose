@@ -70,6 +70,17 @@ services:
       - "127.0.0.1:27017:27017"
     volumes:
       - "./mongo/:/data/db"
+
+  minio:
+    image: "minio/minio:latest"
+    ports:
+      - 9000:9000
+    environment:
+      - "MINIO_ACCESS_KEY=admin"
+      - "MINIO_SECRET_KEY=Abcd@123"
+    volumes:
+      - ./minio:/data
+    command: ["server", "/data"]
   
 
 networks:
